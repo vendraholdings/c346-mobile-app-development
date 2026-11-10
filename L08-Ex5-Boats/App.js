@@ -1,5 +1,7 @@
 import React from 'react';
 import { ScrollView, View, Text, StyleSheet, StatusBar } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons } from '@expo/vector-icons';
 import Boat from './Boat';
 
 // The 6 boats GetABoat is selling (from Boats.txt)
@@ -41,13 +43,22 @@ const boats = [
 
 export default function App() {
   return (
-    <View style={styles.screen}>
-      <StatusBar barStyle="light-content" backgroundColor="#13315C" />
+    <View style={styles.root}>
+      <StatusBar barStyle="light-content" backgroundColor="#0B1022" />
+      <LinearGradient colors={['#0B1022', '#16213E', '#0B1022']} style={StyleSheet.absoluteFill} />
+      <View style={styles.glowIndigo} pointerEvents="none" />
+      <View style={styles.glowTeal} pointerEvents="none" />
+
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>GetABoat</Text>
-        <Text style={styles.headerSub}>For Sale</Text>
+        <View style={styles.logo}>
+          <Ionicons name="boat" size={22} color="#FFFFFF" />
+        </View>
+        <Text style={styles.kicker}>C346 · FOR SALE</Text>
+        <Text style={styles.title}>GetABoat</Text>
+        <Text style={styles.subtitle}>Premium vessels, handpicked.</Text>
       </View>
-      <ScrollView contentContainerStyle={styles.list}>
+
+      <ScrollView contentContainerStyle={styles.list} showsVerticalScrollIndicator={false}>
         {boats.map((boat, i) => (
           <Boat
             key={boat.name}
@@ -63,9 +74,15 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: '#EEF4FA' },
-  header: { backgroundColor: '#13315C', paddingTop: 52, paddingBottom: 18, paddingHorizontal: 20 },
-  headerTitle: { color: '#FFFFFF', fontSize: 28, fontWeight: '800' },
-  headerSub: { color: '#8DA9C4', fontSize: 14, letterSpacing: 2, textTransform: 'uppercase', marginTop: 2 },
-  list: { paddingTop: 20, paddingBottom: 30 },
+  root: { flex: 1, backgroundColor: '#0B1022' },
+  glowIndigo: { position: 'absolute', top: -130, right: -90, width: 360, height: 360, borderRadius: 999, backgroundColor: 'rgba(99,102,241,0.28)' },
+  glowTeal: { position: 'absolute', bottom: -150, left: -110, width: 380, height: 380, borderRadius: 999, backgroundColor: 'rgba(20,184,166,0.20)' },
+
+  header: { paddingTop: 66, paddingHorizontal: 22, paddingBottom: 14 },
+  logo: { width: 48, height: 48, borderRadius: 16, backgroundColor: '#6366F1', alignItems: 'center', justifyContent: 'center', marginBottom: 14 },
+  kicker: { color: '#8B93C9', fontSize: 12, fontWeight: '700', letterSpacing: 3, textTransform: 'uppercase' },
+  title: { color: '#F5F7FF', fontSize: 38, fontWeight: '800', letterSpacing: 0.3, marginTop: 6 },
+  subtitle: { color: '#9AA0C7', fontSize: 15, marginTop: 6 },
+
+  list: { paddingTop: 16, paddingBottom: 34 },
 });
