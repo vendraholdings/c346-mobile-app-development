@@ -18,13 +18,14 @@ pushed to GitHub + uploaded to PoliteMall. **Recording: Friday. Due: Saturday 11
    npx expo start
    ```
    (`npm install` downloads the packages, including the glass/gradient/icon libraries — wait for it the first time.)
-3. Open it: press **`i`** for the iOS Simulator (best for recording), or scan the QR with **Expo Go** on your phone.
-4. Wait for the dark gradient screen with the white **"Animal Quiz"** title and the first photo.
+3. Press **`w`** in that Terminal to open the app in your browser (or open the printed **Web** URL — e.g. http://localhost:8081 — in **Chrome**). No Xcode needed.
+4. Make it look like a phone: in Chrome press **`Cmd + Option + I`** → click the **phone/tablet icon** (or `Cmd + Shift + M`) → choose **iPhone 14 Pro** in the top bar.
+5. Wait for the dark gradient **"Animal Quiz"** screen to load.
 
 ## STEP 2 — Set up recording (Mac)
 1. Press `Cmd + Shift + 5`.
 2. **Options → Microphone → your mic.** ⚠️ Skip this and the video has **no voice.**
-3. Choose **Record Selected Portion** (box around the app) or **Record Entire Screen**.
+3. Choose **Record Selected Portion** and drag the box around the **phone-sized app area** in Chrome.
 4. Have STEP 3 open to read from. Click **Record** (allow Screen Recording permission if asked).
 
 > **Windows (Clipchamp):** Blank Video → Record & create → **Screen** → pick the emulator → Share →
