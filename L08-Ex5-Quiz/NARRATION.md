@@ -1,57 +1,80 @@
-# Quiz App — Recording Walkthrough + Narration Script
+# Quiz App — Full Recording Walkthrough + Narration Script
 
-Everything you need to record the graded video demo of the **Animal Quiz** app.
-Read Part C out loud while you click through the app. Aim for ~60–90 seconds.
+Step-by-step guide to record the graded **Animal Quiz** video demo for Friday. Follow it in order.
+The app uses an Apple-style **liquid-glass** theme: a dark gradient background, blurred translucent cards,
+clean icons, and smooth entrance + score animations.
+
+**You submit:** a screen recording (with your voice) of the quiz running, saved into `L08-Ex5-Quiz/`,
+pushed to GitHub + uploaded to PoliteMall. **Recording: Friday. Due: Saturday 11:59 PM.**
 
 ---
 
-## Part A — Run the app first
-1. Open Terminal in the quiz folder:
+## STEP 1 — Start the app
+1. Open **Terminal** (`Cmd + Space`, type `Terminal`, Enter).
+2. Run these, one line at a time:
    ```
    cd ~/Documents/Desktop-Files/School/C346/work/L08-Ex5-Quiz
    npm install
    npx expo start
    ```
-2. Launch it one of these ways:
-   - **iOS Simulator (easiest on your Mac):** press `i` in the Expo terminal.
-   - **Your phone:** open the Expo Go app and scan the QR code.
-3. Wait until the Animal Quiz screen is fully loaded (title + first animal photo visible).
+   (`npm install` downloads the packages, including the glass/gradient/icon libraries — wait for it the first time.)
+3. Open it: press **`i`** for the iOS Simulator (best for recording), or scan the QR with **Expo Go** on your phone.
+4. Wait for the dark gradient screen with the white **"Animal Quiz"** title and the first photo.
 
-## Part B — Record with narration
-**On the Mac (recommended):**
+## STEP 2 — Set up recording (Mac)
 1. Press `Cmd + Shift + 5`.
-2. Click **Options** → under *Microphone* pick your mic (e.g. MacBook Microphone). This is what records your voice.
-3. Choose **Record Selected Portion** and drag the box around the simulator/app window (or **Record Entire Screen**).
-4. Click **Record**. Do your demo while reading Part C.
-5. Stop: click the ■ stop icon in the menu bar (top-right). The file saves to your Desktop as a `.mov`.
-6. Rename it `L08-Ex5-Quiz-demo.mov` and move it into this folder (`L08-Ex5-Quiz/`).
+2. **Options → Microphone → your mic.** ⚠️ Skip this and the video has **no voice.**
+3. Choose **Record Selected Portion** (box around the app) or **Record Entire Screen**.
+4. Have STEP 3 open to read from. Click **Record** (allow Screen Recording permission if asked).
 
-**On Windows (Clipchamp, per the class guide):** Clipchamp → Blank Video → Record & create → **Screen** → pick the emulator window → speak while demoing → Stop → Save and edit → Export (turn off *Save in the cloud*) → save the `.mp4` into this folder.
+> **Windows (Clipchamp):** Blank Video → Record & create → **Screen** → pick the emulator → Share →
+> speak while demoing → Stop → Save and edit → Export (turn **off** *Save in the cloud*) → save `.mp4` here.
 
-> Tip: keep the mic on, speak clearly, and move at a calm pace. One take is fine — small stumbles are okay.
+## STEP 3 — Narration script (read aloud while you click, ~60–90s)
 
-## Part C — Narration script (read aloud)
-> *"Hi, this is my Animal Quiz app for C346, restyled using a StyleSheet and Flexbox.*
+> **[Start]** *"Hi, this is my Animal Quiz app for C346. I restyled it with a StyleSheet and Flexbox into a clean, Apple-style liquid-glass design."*
 >
-> *First, the whole screen sits inside a ScrollView with a soft green background, and the title 'Animal Quiz' is styled bold, larger, centred, and in a matching green — that's all defined in `StyleSheet.create`, not inline.*
+> **[Let the screen settle / scroll once]** *"The background is a dark gradient with soft glows, and as it loads each card smoothly fades and slides into place. The title 'Animal Quiz' is large, bold and white — all styled in `StyleSheet.create`, not inline."*
 >
-> *Each question is a reusable `Question` component wrapped in a card: a white View with rounded corners, a thin border, and spacing around it, so every question looks like a neat tile instead of plain text.*
+> **[Point at the first card]** *"Each question sits in a frosted, blurred glass card with rounded corners and a thin glowing border — that translucent blur is the liquid-glass look."*
 >
-> *Inside each card the animal image is given a fixed full width and a set height so the photos line up consistently, the question text is bold and centred, and below it is a dropdown picker to choose the answer.*
+> **[Point at the badge, image, dropdown]** *"The question row uses a Flexbox `flexDirection: row` to line up a numbered badge next to the text. The photo has a fixed width and height so they all match, and there's a dropdown to pick the answer."*
 >
-> *Let me answer them.* (pick **Elephant**, then scroll) *…Elephant,* (pick **Leopard**) *…Leopard,* (pick **Giraffe**) *…and Giraffe.*
+> **[Open dropdown → Elephant]** *"When I answer one…"* **[choose Elephant]** *"…a green tick appears on the card and its border lights up green. Elephant…"* **[scroll → Leopard]** *"…Leopard…"* **[scroll → Giraffe]** *"…and Giraffe."*
 >
-> *At the bottom there's a Submit button, styled green with its own spacing. When I press it…* (press **Submit Answers**) *…it checks my answers and shows an alert with my score — three correct, 'Well done!'.*
+> **[Press the emerald Submit button]** *"The Submit button is an emerald gradient with an icon, and it springs slightly when pressed."*
 >
-> *So the before was plain stacked text and a basic list; the after uses a StyleSheet for the colours and typography, and Flexbox layout for the cards, image sizing and spacing — giving a clear, consistent, much more polished look. Thanks for watching."*
+> **[Animated score card appears]** *"My score animates in as its own glass card — three out of three, with a trophy. Perfect score!"*
+>
+> **[End]** *"So the before was plain stacked text; the after uses a StyleSheet for the gradient, glass cards and typography, Flexbox for the layout, plus smooth animations and icons — a polished, Apple-style result. Thanks for watching!"*
 
-## Part D — Styling cheat-sheet (so you can explain it in your own words)
-**Quiz app (`App.js`):**
-- `StyleSheet.create({...})` holds all styles (slides: *benefits performance, organises code*).
-- `container`: `flex: 1`, green background, top padding — the screen shell.
-- `title`: `fontSize: 28`, `fontWeight: 'bold'`, `textAlign: 'center'`, green.
-- `card`: white background, `borderRadius: 10`, `borderWidth: 1`, margin — the tile look.
-- `image`: `width: '100%'`, `height: 220` — fixed, consistent photos.
-- Reusable `Question` component = same card styling for all 3 questions (less repeated code).
+## STEP 4 — Save the file
+1. Click the **■ stop** button in the menu bar (top-right).
+2. It saves to your **Desktop** as a `.mov`.
+3. Rename to **`L08-Ex5-Quiz-demo.mov`** and move it into `L08-Ex5-Quiz/`
+   (Terminal: `mv ~/Desktop/L08-Ex5-Quiz-demo.mov ~/Documents/Desktop-Files/School/C346/work/L08-Ex5-Quiz/`).
 
-**Boats app (`L08-Ex5-Boats`):** header bar, white cards with shadows (`elevation`/`shadowColor`), and a **`flexDirection: 'row'`** title row that puts the ship icon next to the boat name — the clearest Flexbox example across the two apps.
+## STEP 5 — Push the video
+Once the file is in the folder, **tell me "video's in"** and I'll commit + push it for you.
+
+## STEP 6 — Submit on PoliteMall
+Upload the recording to the Exercise #5 Individual Submission. Both apps are already on GitHub.
+
+---
+
+## If something goes wrong
+- **No sound →** you skipped STEP 2.2 (pick the Microphone first). Re-record.
+- **`npx expo start` errors →** re-run `npm install`; make sure you're in the `L08-Ex5-Quiz` folder.
+- **Dropdown won't open →** tap directly on it; give the app a second to load.
+- **Video too big for GitHub (>100 MB) →** record at 720p / keep it ~60–90s.
+
+## Cheat-sheet — explain the styling in your own words
+**Quiz (`App.js`):** all styling lives in `StyleSheet.create` (slides: *benefits performance, organises code*).
+- `LinearGradient` dark background + two soft **glow** circles for depth.
+- **Liquid glass** cards = `BlurView` (blurred, translucent) with a hairline border and `borderRadius` — the Apple frosted look.
+- `qRow` / `badge` = a **`flexDirection: 'row'`** Flexbox row placing a numbered badge beside the question.
+- Smooth **`Animated`** entrance (fade + rise + scale), a green tick + glowing border when answered, a spring on the button, and an animated glass **score card** on submit.
+- Clean **Ionicons** (`paw`, `checkmark-circle`, `checkmark-done`, `trophy`) for a minimal, modern feel.
+
+**Boats (`L08-Ex5-Boats`):** same gradient + `BlurView` glass system — a **`flexDirection: 'row'`** title row with a
+boat-icon circle next to the name, muted description, and a staggered fade/slide/scale animation per card.
